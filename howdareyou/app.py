@@ -2,7 +2,6 @@ import os
 import sys
 
 from flask import Flask, render_template, flash, url_for, current_app, redirect
-import config
 
 
 STATIC_FOLDER = "../static"
@@ -11,7 +10,6 @@ TEMPLATE_FOLDER = "../template"
 app = Flask(__name__,
             static_folder = STATIC_FOLDER, 
             template_folder = TEMPLATE_FOLDER)
-app.config.from_object('config')
 
 from howdareyou.views import bp as index_bp
 app.register_blueprint(index_bp)
