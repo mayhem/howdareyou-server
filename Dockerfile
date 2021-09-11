@@ -1,9 +1,7 @@
-FROM nginx:1.19.1
+FROM ubuntu:21.04
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-         build-essential \
-         nginx \
          python3 \
          python3-dev \
          python3-pip \
@@ -11,27 +9,29 @@ RUN apt-get update \
          uwsgi \
          uwsgi-plugin-python3 \
          libpcre3-dev \
+         npm \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install setuptools
 
 RUN mkdir -p /code/howdareyou
 WORKDIR /code/howdareyou
+
 COPY requirements.txt /code/howdareyou
 RUN pip3 install -r requirements.txt
 
-RUN apt-get purge -y build-essential && \
-    apt-get autoremove -y && \
-    apt-get clean -y
+RUN npm install -D tailwindcss@latest postcss@latest autoprefixer@latest postcss-cli@latest
+RUN npx tailwindcss init tailwind.config.js -m --purge './src/**/*.html' --purge './src/**/*.js'
 
-WORKDIR /code/howdareyou
 COPY . /code/howdareyou
+RUN node_modules/.bin/postcss static/css/styles.css -o static/css/howdareyou.css
 
-// tailwind.config.js needs a tweak
-// postcss should compile to minimal
-
+RUN apt-get autoremove -y && \
+    apt-get clean -y
+ 
 ENV FLASK_APP=howdareyou
 ENV FLASK_ENV=production
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
-RUN flask run
+
+CMD flask run

@@ -1,0 +1,17 @@
+version: "3.3"
+
+services:
+
+  web:
+    build: .
+    expose:
+      - "3031"
+    environment:
+      - VIRTUAL_HOST=howdareyou.wtf
+      - LETSENCRYPT_HOST=howdareyou.wtf
+      - LETSENCRYPT_EMAIL=mayhem@gmail.com
+
+networks:
+  default:
+    name: nginx-proxy
+    external: true
