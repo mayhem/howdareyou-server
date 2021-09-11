@@ -21,7 +21,7 @@ COPY requirements.txt /code/howdareyou
 RUN pip3 install -r requirements.txt
 
 RUN npm install -D tailwindcss@latest postcss@latest autoprefixer@latest postcss-cli@latest
-RUN npx tailwindcss init tailwind.config.js -m --purge './src/**/*.html' --purge './src/**/*.js'
+#RUN npx tailwindcss init tailwind.config.js -m --purge './src/**/*.html' --purge './src/**/*.js'
 
 COPY . /code/howdareyou
 RUN node_modules/.bin/postcss static/css/styles.css -o static/css/howdareyou.css

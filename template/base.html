@@ -22,20 +22,21 @@
       <title>{% block title %}How dare you!{% endblock %}</title>
 
     {% endblock %}
+  </head>
+
+  <body class="font-light bg-ch0">
 
     {%- include 'navbar.html' -%}
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 p-2">
-        <div class="bg-gray-100 flex justify-center rounded-lg">
+
+    <div class="container mx-auto">
+      <div class="grid grid-cols-1">
+        <div class="flex justify-center">
           {% block content %}
           {% endblock%}
         </div>
       </div>
     </div>
 
-  </head>
-  <body class="font-light">
-
-</body>
+  </body>
 </html>
 
