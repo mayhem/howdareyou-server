@@ -4,6 +4,8 @@ module.exports = {
   theme: {
     extend: {},
     colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
       black: {
         DEFAULT: '#000000'
       },
