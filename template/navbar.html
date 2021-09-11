@@ -35,9 +35,12 @@
         <div class="hidden sm:block sm:ml-6">
           <div class="flex space-x-4">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="/" class="bg-ch3d text-ch0 px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Videos</a>
-            <a href="/make-your-own" class="text-ch0 hover:ch-3 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Make your own</a>
-            <a href="/about" class="text-ch0 hover:ch-3 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+            <a href="/" class="{% if current == 'index' %}bg-ch3d{% endif %}
+               text-ch0 px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Videos</a>
+            <a href="/make-your-own" class="{% if current == 'make' %}bg-ch3d{% endif %}
+               text-ch0 hover:ch-3 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Make your own</a>
+            <a href="/about" class="{% if current == 'about' %}bg-ch3d{% endif %}
+               text-ch0 hover:ch-3 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
           </div>
         </div>
       </div>
