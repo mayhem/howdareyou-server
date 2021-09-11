@@ -29,9 +29,9 @@ RUN node_modules/.bin/postcss static/css/styles.css -o static/css/howdareyou.css
 RUN apt-get autoremove -y && \
     apt-get clean -y
  
-ENV FLASK_APP=howdareyou
+ENV FLASK_APP=howdareyou.app
 ENV FLASK_ENV=production
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
 
-CMD flask run
+CMD uwsgi -i /code/howdareyou/admin/uwsgi/uwsgi.ini
