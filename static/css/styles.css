@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  a {
+    @apply text-ch3;
+    @apply font-semibold;
+  }
+  a:hover {
+    @apply text-ch2;
+  }
+  a:active {
+    @apply text-ch1;
+  }
+}
+
 body {
   font-family: 'Ubuntu', sans-serif;
 }
