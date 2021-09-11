@@ -6,6 +6,10 @@ body {
   font-family: 'Ubuntu', sans-serif;
 }
 
+b {
+  font-weight: 500;
+}
+
 .video-wrapper {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
