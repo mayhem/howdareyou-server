@@ -12,6 +12,6 @@ def index():
 def robots():
     return render_template("robots.txt")
 
-#@bp.route('/favicon.ico')
-#def favicon():
-#    return send_file("../static/img/favicon-32x32.png")
+@bp.route('/favicon.ico')
+def favicon():
+    return send_file("../static/img/exclamation-logo.svg")
