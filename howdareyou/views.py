@@ -15,3 +15,12 @@ def robots():
 @bp.route('/favicon.ico')
 def favicon():
     return send_file("../static/img/exclamation-logo.svg")
+
+@bp.route('/make-your-own')
+def make_your_own():
+    return render_template("make-your-own.html")
+
+@bp.route('/about')
+def about():
+    return render_template("about.html")
+
