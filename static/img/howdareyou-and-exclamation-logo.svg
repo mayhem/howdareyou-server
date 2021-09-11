@@ -2,40 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="248.66087mm"
+   width="248.26022mm"
    height="33.901855mm"
-   viewBox="0 0 248.66088 33.901855"
+   viewBox="0 0 248.26023 33.901855"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
-   sodipodi:docname="howdareyou-logo.svg"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview7"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:document-units="mm"
-     showgrid="false"
-     inkscape:zoom="2"
-     inkscape:cx="631.75"
-     inkscape:cy="-9"
-     inkscape:window-width="2560"
-     inkscape:window-height="1307"
-     inkscape:window-x="1920"
-     inkscape:window-y="27"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="layer1"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0" />
   <defs
      id="defs2">
     <rect
@@ -47,7 +20,7 @@
     <rect
        x="117.03084"
        y="281.0965"
-       width="1135.5091"
+       width="1135.5092"
        height="198.61177"
        id="rect31747" />
     <rect
@@ -70,8 +43,6 @@
        id="rect31747-7" />
   </defs>
   <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-24.335878,-96.106902)">
     <text
@@ -91,9 +62,9 @@
        style="font-size:133.333px;line-height:1.25;font-family:sans-serif;letter-spacing:-5.31px;white-space:pre;shape-inside:url(#rect31747);fill:#f9f9f9"><tspan
          x="117.03125"
          y="405.42768"
-         id="tspan53847"><tspan
+         id="tspan53938"><tspan
            style="font-weight:bold;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Bold'"
-           id="tspan53845">How dare you</tspan></tspan></text>
+           id="tspan53936">How dare you</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,203.13131,16.372219)"
@@ -101,9 +72,9 @@
        style="font-size:133.333px;line-height:1.25;font-family:sans-serif;letter-spacing:-5.31px;white-space:pre;shape-inside:url(#rect31747-7);fill:#d40000"><tspan
          x="117.03125"
          y="405.42768"
-         id="tspan53851"><tspan
+         id="tspan53942"><tspan
            style="font-weight:bold;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Bold'"
-           id="tspan53849">?!?</tspan></tspan></text>
+           id="tspan53940">?!?</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="scale(0.26458333)"
