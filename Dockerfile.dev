@@ -1,4 +1,4 @@
-FROM python:3.9.5-buster
+FROM ubuntu:21.04
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
@@ -9,21 +9,25 @@ RUN apt-get update \
          uwsgi \
          uwsgi-plugin-python3 \
          libpcre3-dev \
+         npm \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install setuptools
 
 RUN mkdir -p /code/howdareyou
 WORKDIR /code/howdareyou
+
 COPY requirements.txt /code/howdareyou
 RUN pip3 install -r requirements.txt
 
-RUN apt-get purge -y build-essential && \
-    apt-get autoremove -y && \
-    apt-get clean -y
+RUN npm install -D tailwindcss@latest postcss@latest autoprefixer@latest postcss-cli@latest
+RUN npx tailwindcss init
 
-WORKDIR /code/howdareyou
-#COPY . /code/howdareyou
+COPY . /code/howdareyou
+RUN node_modules/.bin/postcss static/css/styles.css -o static/css/howdareyou.css
+
+RUN apt-get autoremove -y && \
+    apt-get clean -y
 
 ENV FLASK_APP=howdareyou/app.py
 ENV FLASK_ENV=debugging

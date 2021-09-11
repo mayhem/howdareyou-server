@@ -6,5 +6,7 @@ docker run -it \
     --rm \
     --name howdareyou-web \
     -p 80:5000 \
-    -v `pwd`:/code/howdareyou \
+    -v `pwd`/howdareyou:/code/howdareyou/howdareyou \
+    -v `pwd`/template:/code/howdareyou/template \
+    -v `pwd`/static/img:/code/howdareyou/static/img \
     mayhem/howdareyou

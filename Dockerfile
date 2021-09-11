@@ -27,6 +27,9 @@ RUN apt-get purge -y build-essential && \
 WORKDIR /code/howdareyou
 COPY . /code/howdareyou
 
+// tailwind.config.js needs a tweak
+// postcss should compile to minimal
+
 ENV FLASK_APP=howdareyou
 ENV FLASK_ENV=production
 ENV LC_ALL=C.UTF-8

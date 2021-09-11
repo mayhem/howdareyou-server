@@ -1,55 +1,48 @@
 {%- extends 'base.html' -%}
 {%- block content -%}
-<div class="row">
+<div class="grid grid-cols-1 p-2">
+    <div class="bg-gray-100 rounded-lg">
 
-    <div class="col-6">
-      <div>
-        <p class="header-title">
-           How dare you?
-        </p>
-        <p class="header-subtitle">
-           #howdareyou
-        </p>
-      </div>
-    </div>
-
-    <div class="col-6">
-      <div class="text-end">
-        <p class="header-handle">
-           by Miss Feisty
-        <p>
-        <p class="header-subhandle">
-           @MissFeistyWTF
-        </p>
-      </div>
-    </div>
-
-</div>
-<div class="row">
-    <div class="col-12">
-       <p><span style="font-weight: bold;">#howdareyou</span> is following in the 
-           footsteps of <span style="font-weight: bold">#metoo</span> and
-           attempting to call out disrespectful human behaviour.
-       </p>
-
-       <div class="text-center">
-           <div class="episode-title">
-               Episode #1: No condom?
+       <div class="flex flex-col max-w-3xl">
+           <p class="p-4">
+            <span class="font-bold">#howdareyou</span> is following in the footsteps of <span class="font-bold">#metoo</span> and
+             attempting to call out disrespectful human behaviour. Our collection of 20 second videos are designed to identify
+             bad behaviour and raise awareness that these actions can have significant negative effects on others. 
            </p>
-         <iframe width="560" height="315" src="https://www.youtube.com/embed/6xb5nF9IjZE"
-                 title="YouTube video player" frameborder="0"
-                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-         </iframe>
-       </div>
 
-       <div class="text-center">
-           <div class="episode-title">
-               Episode #2: You what???
+         <div class="" id="outer">
+           <div class="justify-center">
+             <div class="flex flex-col p-2">
+
+               <div class="video-wrapper">
+                 <iframe width="560" height="315" src="https://www.youtube.com/embed/6xb5nF9IjZE"
+                       title="YouTube video player" frameborder="0"
+                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                 </iframe>
+               </div>
+               <div>
+                 <p>
+                     Asking for sex, but you don't even have a condom?
+                 </p>
+               </div>
+
+               <div class="video-wrapper mt-3">
+                   <iframe width="560" height="315" src="https://www.youtube.com/embed/oe1UDd7YaP4"
+                         title="YouTube video player" frameborder="0"
+                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                   </iframe>
+               </div>
+               <div>
+                 <p>
+                     Taking off a condom during sex??
+                 </p>
+               </div>
+
+             </div>
+
            </div>
-         <iframe width="560" height="315" src="https://www.youtube.com/embed/oe1UDd7YaP4"
-                 title="YouTube video player" frameborder="0"
-                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-         </iframe>
+         </div>
+
        </div>
 
     </div>
