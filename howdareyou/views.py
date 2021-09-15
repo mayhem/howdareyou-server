@@ -1,12 +1,28 @@
+import os
+
 from werkzeug.exceptions import NotFound
 from flask import Flask, render_template, url_for, current_app, redirect, Blueprint, request, send_file
+import yaml
+from icecream import ic
+
+
+CONTENT_FOLDER = "content"
 
 bp = Blueprint('index', __name__)
 
 
 @bp.route('/')
 def index():
-    return render_template("index.html")
+
+    with open(os.path.join(CONTENT_FOLDER, "posts.yml"), "r") as stream:
+        try:
+            data = yaml.safe_load(stream)
+            posts = data["posts"]
+        except yaml.YAMLError as exc:
+            print(exc)
+            posts = []
+
+    return render_template("index.html", posts=posts)
 
 @bp.route('/robots.txt')
 def robots():
