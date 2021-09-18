@@ -1,4 +1,5 @@
 import os
+from collections import defaultdict
 
 from werkzeug.exceptions import NotFound
 from flask import Flask, render_template, url_for, current_app, redirect, Blueprint, request, send_file
@@ -11,8 +12,7 @@ CONTENT_FOLDER = "content"
 bp = Blueprint('index', __name__)
 
 
-@bp.route('/')
-def index():
+def parse_posts():
 
     with open(os.path.join(CONTENT_FOLDER, "posts.yml"), "r") as stream:
         try:
@@ -22,6 +22,13 @@ def index():
             print(exc)
             posts = []
 
+    return posts
+
+
+@bp.route('/')
+def index():
+
+    posts = parse_posts()
     return render_template("index.html", posts=posts)
 
 @bp.route('/robots.txt')
@@ -39,4 +46,17 @@ def make_your_own():
 @bp.route('/about')
 def about():
     return render_template("about.html")
+
+@bp.route('/tags')
+def tags():
+    posts = parse_posts()
+
+    tags = defaultdict(int)
+    for post in posts:
+        tags[post['tag']] += 1
+
+    # Sort tags in descending order of count
+    tags = {k: v for k, v in sorted(tags.items(), key=lambda item: item[1], reverse=True)} 
+
+    return render_template("tags.html", tags=tags)
 
