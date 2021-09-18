@@ -1,0 +1,24 @@
+{% from "entries.html" import entries with context %}
+
+{%- extends 'base.html' -%}
+{% set current = "tags" %}
+{%- block content -%}
+<div class="flex flex-col max-w-3xl">
+    <p class="p-4">
+       Videos for tag {{ tag }}
+    </p>
+
+    {{ entries(posts) }}
+
+</div>
+
+<script>
+$(document).ready(function() {
+    $("#mobile-menu").hide();  
+    $("#menu-button").click(function () {
+        $("#mobile-menu").toggle(100);  
+    });
+});
+</script>
+
+{% endblock%}

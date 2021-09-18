@@ -71,3 +71,16 @@ def tags():
 
     return render_template("tags.html", tags=tags)
 
+@bp.route('/tag/<tg>')
+def tag(tg):
+
+    if tg.startswith("#"):
+        tg = tg[1:-1]
+
+    posts = parse_posts()
+    filtered = []
+    for post in posts:
+        if tg.lower() == post["tag"].lower().strip():
+            filtered.append(post)
+
+    return render_template("tag.html", posts=filtered)

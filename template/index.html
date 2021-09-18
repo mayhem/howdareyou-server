@@ -1,3 +1,5 @@
+{% from "entries.html" import entries with context %}
+
 {%- extends 'base.html' -%}
 {% set current = "index" %}
 {%- block content -%}
@@ -13,33 +15,7 @@
       out this behaviour, please <a href="/make-your-own">make your own video</a>!
     </p>
 
-  <div class="" id="outer">
-    <div class="justify-center">
-      <div class="flex flex-col p-2">
-
-        {% for post in posts %}
-            <div class="video-wrapper mt-5">
-              <iframe width="560" height="315" src="{{ post.url }}"
-                      title="YouTube video player" frameborder="0" allowfullscreen>
-              </iframe>
-            </div>
-            <div class="flex flex-row justify-between bg-ch1 p-2 rounded-b-lg">
-              <p class="font-medium text-ch3">
-                {{ post.desc }}
-              </p>
-              <p class="text-gray-500">
-                {{ post.tag }}
-              </p>
-            </div>
-
-        {% else %}
-            <p class="text-lg">Error: oops, found no posts. :(</p>
-        {% endfor %}
-
-      </div>
-
-    </div>
-  </div>
+    {{ entries(posts) }}
 
 </div>
 

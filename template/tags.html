@@ -13,7 +13,7 @@
       </thead>
       {% for tag in tags %}
         <tr>
-          <td class="border px-8 py-4 font-bold">{{ tag }}</td>
+          <td class="border px-8 py-4 font-bold"><a href="/tag/{{ tag }}">{{ tag }}</a></td>
           <td class="border px-8 py-4">{{ tags[tag] }}</td>
         </tr>
       {% else %}
