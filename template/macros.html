@@ -14,7 +14,7 @@
               {{ post.desc }}
             </p>
             <p class="text-gray-500">
-              #{{ post.tag }}
+              <a href="/tag/{{post.tag}}">#{{ post.tag }}</a>
             </p>
           </div>
 
@@ -26,4 +26,15 @@
 
   </div>
 </div>
+{% endmacro %}
+
+{% macro init_menu() -%}
+<script>
+$(document).ready(function() {
+    $("#mobile-menu").hide();  
+    $("#menu-button").click(function () {
+        $("#mobile-menu").toggle(100);  
+    });
+});
+</script>
 {% endmacro %}

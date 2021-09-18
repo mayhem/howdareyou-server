@@ -1,3 +1,4 @@
+{% from "macros.html" import init_menu without context %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -36,6 +37,8 @@
         </div>
       </div>
     </div>
+
+    {{ init_menu() }}
 
   </body>
 </html>

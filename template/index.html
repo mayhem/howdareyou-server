@@ -1,4 +1,4 @@
-{% from "entries.html" import entries with context %}
+{% from "macros.html" import entries without context %}
 
 {%- extends 'base.html' -%}
 {% set current = "index" %}
@@ -19,13 +19,5 @@
 
 </div>
 
-<script>
-$(document).ready(function() {
-    $("#mobile-menu").hide();  
-    $("#menu-button").click(function () {
-        $("#mobile-menu").toggle(100);  
-    });
-});
-</script>
 
 {% endblock%}
