@@ -49,6 +49,17 @@ def about():
 
 @bp.route('/tags')
 def tags():
+
+    class reversor:
+        def __init__(self, obj):
+            self.obj = obj
+
+        def __eq__(self, other):
+            return other.obj == self.obj
+
+        def __lt__(self, other):
+            return other.obj < self.obj
+
     posts = parse_posts()
 
     tags = defaultdict(int)
@@ -56,7 +67,7 @@ def tags():
         tags[post['tag']] += 1
 
     # Sort tags in descending order of count
-    tags = {k: v for k, v in sorted(tags.items(), key=lambda item: item[1], reverse=True)} 
+    tags = {k: v for k, v in sorted(tags.items(), key=lambda item: (reversor(item[1]), item[0])) } 
 
     return render_template("tags.html", tags=tags)
 
