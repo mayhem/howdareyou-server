@@ -34,4 +34,6 @@ ENV FLASK_ENV=production
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
 
-CMD uwsgi -i /code/howdareyou/admin/uwsgi/uwsgi.ini
+CMD cp admin/nginx/location.conf /vhost/howdareyou.wtf_location && \
+    cp admin/nginx/nginx.conf /vhost/howdareyou.wtf && \
+    uwsgi -i /code/howdareyou/admin/uwsgi/uwsgi.ini

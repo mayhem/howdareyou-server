@@ -6,6 +6,8 @@ services:
     build: .
     expose:
       - "3031"
+    volumes:
+      - /root/vhost:/vhost
     environment:
       - VIRTUAL_HOST=howdareyou.wtf
       - LETSENCRYPT_HOST=howdareyou.wtf
