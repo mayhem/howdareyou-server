@@ -23,3 +23,13 @@ posts:
    tag: "hdy-stop"
    desc: "I asked you to stop!"
    lang: "en"
+
+ - url: "https://www.youtube.com/embed/jUlvqGc7nH4"
+   tag: "hdy-no-means-no"
+   desc: "No means NO!"
+   lang: "en"
+
+ - url: "https://www.youtube.com/embed/esmaqw_z1nA"
+   tag: "hdy-no-means-no"
+   desc: "不就是不"
+   lang: "zh"
