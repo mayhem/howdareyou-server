@@ -8,6 +8,7 @@ services:
       - "3031"
     volumes:
       - /root/vhost:/vhost
+    restart: unless-stopped
     environment:
       - VIRTUAL_HOST=howdareyou.wtf
       - LETSENCRYPT_HOST=howdareyou.wtf
